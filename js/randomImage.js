@@ -1,5 +1,5 @@
 document.addEventListener('DOMContentLoaded', function () {
-    const IMAGE_COUNT = 7; // Set the number of images here
+    const IMAGE_COUNT = 16; // Set the number of images here
     const images = generateImageFilenames(IMAGE_COUNT);
 
     // Function to generate image filenames based on the count
