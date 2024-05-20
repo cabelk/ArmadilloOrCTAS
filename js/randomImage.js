@@ -45,10 +45,12 @@ document.addEventListener('DOMContentLoaded', function () {
     // Display image0 on initial load
     displayImage(images[0]);
 
-    // Event listeners for the buttons
-    document.querySelectorAll('.btn').forEach(button => {
-        button.addEventListener('click', function () {
-            displayImage(getRandomImage());
-        });
+    // Event listeners for the screen halves
+    document.getElementById('left-half').addEventListener('click', function () {
+        displayImage(getRandomImage());
+    });
+
+    document.getElementById('right-half').addEventListener('click', function () {
+        displayImage(getRandomImage());
     });
 });

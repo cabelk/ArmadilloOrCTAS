@@ -191,6 +191,14 @@ select {
     font-style: normal;
 }
 
+.overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 10000;
+  }
 
 @keyframes bounceIn {
     0% {
@@ -211,4 +219,4 @@ select {
   
   .bounce-in {
     animation: bounceIn 10s ease;
-  }
+}
