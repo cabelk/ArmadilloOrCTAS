@@ -32,9 +32,13 @@ document.addEventListener('DOMContentLoaded', function () {
         // Append the image to the new card
         newCard.appendChild(img);
 
-        // Append the new card to the card group
-        const cardGroup = document.querySelector('.card-container');
-        cardGroup.appendChild(newCard);
+        // Append the new card to the card container
+        const cardContainer = document.querySelector('.card-container');
+        if (!cardContainer) {
+            console.error('Error: .card-container not found in the DOM.');
+            return;
+        }
+        cardContainer.appendChild(newCard);
     }
 
 
