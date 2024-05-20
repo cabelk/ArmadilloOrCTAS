@@ -199,3 +199,24 @@ select {
     height: 100%;
     z-index: 10000;
   }
+
+@keyframes bounceIn {
+    0% {
+      transform: translateY(100%);
+      opacity: 0;
+    }
+    50% {
+      transform: translateY(2%);
+      opacity: 1;
+    }
+    100% {
+      transform: translateY(0%);
+    }
+    100% {
+      transform: translateY(0);
+    }
+  }
+  
+  .bounce-in {
+    animation: bounceIn 10s ease;
+}
