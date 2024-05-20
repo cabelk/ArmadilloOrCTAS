@@ -53,9 +53,13 @@ document.addEventListener('DOMContentLoaded', function () {
         star.alt = 'Star';
         star.className = 'throw'; // Add star-fly class for animation
 
-        // Randomize horizontal and vertical movement, and rotation
-        const horizontalMove = `${Math.random() * 200 - 100}px`;
-        const verticalMove = `${-100 + Math.random() * -100}px`;
+        // Get the viewport height
+        const viewportHeight = window.innerHeight;
+        const viewportWidth = window.innerWidth;
+
+        // Randomize horizontal movement, vertical movement, and rotation
+        const horizontalMove = `${(Math.random() - .5) * innerWidth}px`;
+        const verticalMove = `${-viewportHeight * .5 * (Math.random() + 1)}px`; // Ensure the maximum height is the viewport height
         const rotation = `${360 * Math.floor(Math.random() * 5 + 1)}deg`;
 
         // Set custom properties for the animation
@@ -77,7 +81,7 @@ document.addEventListener('DOMContentLoaded', function () {
         displayImage(getRandomImage());
 
         // 25% chance to display a star
-        if (Math.random() < 0.25) {
+        if (Math.random() < 0.8) {
             displayStar();
         }
     }
