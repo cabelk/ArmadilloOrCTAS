@@ -27,7 +27,7 @@ document.addEventListener('DOMContentLoaded', function () {
 
         // Create a new card element
         const newCard = document.createElement('div');
-        newCard.className = 'card border-0';
+        newCard.className = 'card border-0 bounce-in';
 
         // Append the image to the new card
         newCard.appendChild(img);
