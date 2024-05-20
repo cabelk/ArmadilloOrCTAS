@@ -11,9 +11,6 @@ document.addEventListener('DOMContentLoaded', function () {
         return imageArray;
     }
 
-    // List of image file names
-    // const images = ['image1.jpg', 'image2.jpg', 'image3.jpg']; // Replace with your actual image file names
-
     // Function to pick a random image
     function getRandomImage() {
         const randomIndex = Math.floor(Math.random() * images.length);
@@ -22,52 +19,32 @@ document.addEventListener('DOMContentLoaded', function () {
 
     // Function to display an image
     function displayImage(src) {
+        // Create a new img element
         const img = document.createElement('img');
         img.src = src;
         img.alt = 'Random Image';
-        img.className = 'img-fluid';
+        img.className = 'card-img-top'; // Use Bootstrap class for card images
 
-        // Append the image to the first .js-memes-container-col
-        const firstColumn = document.querySelector('.js-memes-container-col');
-        firstColumn.appendChild(img);
+        // Create a new card element
+        const newCard = document.createElement('div');
+        newCard.className = 'card border-0';
+
+        // Append the image to the new card
+        newCard.appendChild(img);
+
+        // Append the new card to the card group
+        const cardGroup = document.querySelector('.card-container');
+        cardGroup.appendChild(newCard);
     }
 
-    
+
     // Display image0 on initial load
     displayImage(images[0]);
 
-    // Event listener for the navbar-brand
-    document.querySelector('.navbar-brand').addEventListener('click', function (event) {
-        event.preventDefault(); // Prevent the default action
-        displayImage(getRandomImage());
+    // Event listeners for the buttons
+    document.querySelectorAll('.btn').forEach(button => {
+        button.addEventListener('click', function () {
+            displayImage(getRandomImage());
+        });
     });
-    /*
-    // Function to scroll to the bottom of the first column
-    function scrollToBottom() {
-        const firstColumn = document.querySelector('.js-memes-container-col');
-        firstColumn.scrollTop = firstColumn.scrollHeight;
-    }
-
-
-
-    // Event listener for the navbar-brand
-    document.querySelector('.navbar-brand').addEventListener('click', function (event) {
-        event.preventDefault(); // Prevent the default action
-
-        // Create an img element and set its src attribute to a random image
-        const img = document.createElement('img');
-        img.src = `images/${getRandomImage()}`;
-        img.alt = 'Random Image';
-        img.className = 'img-fluid img-override';
-
-        // Append the image to the first .js-memes-container-col
-        const firstColumn = document.querySelector('.js-memes-container-col');
-        firstColumn.appendChild(img);
-
-
-        // Scroll to the bottom of the first column
-        scrollToBottom();
-    });
-    */
-
 });
